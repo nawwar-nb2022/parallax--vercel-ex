@@ -1,0 +1,137 @@
+/* max width 991 */
+@media only screen and (max-width: 991px) {
+  .thirdSection .itemContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .thirdSection .itemContainer .leftContainer {
+    min-width: 100%;
+    min-height: 80vh;
+  }
+
+  /* fourth section */
+
+  .fourthSection .cardsContainer .subTitle {
+    justify-content: center;
+    align-items: flex-start;
+    z-index: 10;
+    position: relative;
+  }
+  .fourthSection .cardsContainer .subTitle p {
+    width: 80%;
+  }
+
+  /* fifth section  */
+  .Section100vh--videoWithMask--plus {
+    display: none;
+  }
+  /* last section  */
+  .lastSection {
+    display: none;
+  }
+}
+
+/* max width 850px */
+@media only screen and (max-width : 850px ){
+
+  .rowImageContainer .imageContainer{
+    min-width: 100%;
+  }
+}
+/* max width 767 */
+@media only screen and (max-width: 767px) {
+  .secondSection .textContainer .text {
+    width: 100%;
+  }
+  .secondSection .textContainer .titled {
+    font-size: 30px;
+  }
+  .secondSection .topRight {
+    top: 350px;
+    margin-top: 150px;
+  right: calc(50% - 128px);
+  }
+
+  .firstSection .extraShadow {
+    margin-left: 40px;
+  }
+
+  .firstSection .imagesContainer .imageContainer img,
+  .firstSection .imagesContainer .imageContainer .extraShadow {
+    object-fit: cover;
+    min-height: 40vh;
+    max-height: 40vh;
+  }
+  /* start second section  */
+  .secondSection {
+    display: block;
+    margin: 100px auto;
+  }
+  .secondSection .textContainer {
+    order: 0;
+    height: 30vh;
+    margin-bottom: 10vh;
+    padding-left: 20px;
+  }
+
+  .secondSection .topRight {
+    order: 2;
+    max-width: 40%;
+    width: 40%;
+    min-height: fit-content;
+    margin: 0;
+    display: inline-block;
+  }
+  .secondSection .bottomLeft {
+    display: none;
+  }
+  .secondSection .showOnSmallScreen {
+    display: inline-block;
+    width: 50%;
+    min-height: 30vh;
+    padding: 0 10px;
+    margin-top: 150px;
+  }
+
+  .secondSection .showOnSmallScreen img {
+    width: 80%;
+    min-width: calc(30vw);
+    margin-right: auto;
+    min-height: 30vh;
+    border: 1px solid black;
+  }
+
+  /* fourth section */
+  .fourthSection {
+    min-height: 450vh;
+  }
+  .fourthSection .cardsContainer .imageContainer {
+    width: 95%;
+    margin: 10px auto;
+  }
+  .rowImageContainer {
+    flex-direction: column;
+    gap: 20vh;
+    margin: 20vh 0;
+  }
+  .rowImageContainer.secondRow {
+    margin-top: 0;
+  }
+}
+
+/* max width 500 */
+@media only screen and (max-width: 500px) {
+  .firstSection .imageContainer,
+  .firstSection .imagesContainer .imageContainer .extraShadow {
+    min-width: fit-content;
+    min-height: auto;
+  }
+  .firstSection .imagesContainer .imageContainer img,
+  .firstSection .imagesContainer .imageContainer .extraShadow {
+    object-fit: cover;
+    min-height: 40vh;
+    max-height: auto;
+  }
+}
+
+/* extra condition */

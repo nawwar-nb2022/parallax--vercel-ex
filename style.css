@@ -1,0 +1,904 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--neue);
+}
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+body {
+  max-width: 2500px;
+  overflow: hidden;
+}
+
+/* remove when add real image  */
+/* .imageContainer img {
+  border: 1px solid black;
+  min-height: 150px;
+  background-image: radial-gradient(cyan 0%, green 40%, black 80%);
+} */
+/* end */
+
+/* body style */
+
+body {
+  transition: 0.5s ease all;
+}
+/* end body style */
+
+/* first section */
+.firstSection {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.firstSection .videoContainer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.firstSection .imagesContainer {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+.firstSection .imagesContainer .imageContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.firstSection .imagesContainer .imageContainer img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center center;
+  min-width: 200px;
+  height: auto;
+}
+.firstSection .imagesContainer .imageContainer .extraShadow {
+  min-width: 260px;
+  height: auto;
+}
+.firstSection .imagesContainer .imageContainer .extraShadow img {
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* end first section */
+
+/* start second section  */
+
+.secondSection {
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+
+  display: grid;
+  padding: 10%;
+  padding-top: 5%;
+
+  position: relative;
+  grid-template-columns: repeat(1, 1fr);
+}
+.showOnSmallScreen {
+  display: none;
+}
+.secondSection .textContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.secondSection .textContainer .titled {
+  font-size: 70px;
+  line-height: 100px;
+  /* liner gradient for text */
+  background-size: 200% auto;
+  /* background-image: linear-gradient(
+    271deg,
+    rgba(230, 182, 151, 1) 0%,
+    rgba(173, 120, 86, 1) 5%,
+    rgba(122, 74, 46, 1) 10%,
+    rgba(181, 127, 92, 1) 50%,
+    rgba(230, 182, 151, 1) 100%
+  ); */
+
+  background: linear-gradient(
+    271deg,
+    #444 0%,
+    #444 5%,
+    #f44336 10%,
+    #f44336 50%,
+    #f44336 100%
+  );
+
+  /*  to let the letter take the gradient color*/
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* add the animation  */
+  animation: textAnimate 10s linear infinite;
+}
+
+@keyframes textAnimate {
+  0% {
+    background-size: 0%;
+  }
+  100% {
+    background-size: 400%;
+  }
+}
+
+/* image on the top right position of the section */
+.secondSection .textContainer .text {
+  color: var(--customfont);
+  font-family: var(--neue);
+  font-size: 1rem;
+  width: 22.9vw;
+  line-height: 24px;
+}
+
+.secondSection .topRight {
+  position: absolute;
+  top: 100px;
+  right: 20px;
+  width: fit-content;
+}
+.secondSection .topRight .CoverImage {
+  object-fit: cover;
+  /* width: 100%; */
+  object-position: center center;
+  width: 257px;
+  height: 335px;
+}
+
+/* image on the bottom left position of the section */
+
+.secondSection .bottomLeft {
+  position: relative;
+  z-index: 3;
+}
+
+.secondSection .bottomLeft .Image {
+  position: absolute;
+  top: 90%;
+  width: 60%;
+  left: 10%;
+}
+.secondSection .bottomLeft .Image img {
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  object-position: center;
+  width: 200px;
+  height: 250px;
+}
+/* end second section */
+
+.thirdSection {
+  width: 100%;
+  position: relative;
+  min-height: 120vh;
+  overflow: hidden;
+  z-index: 40;
+}
+
+/* float image style */
+
+.thirdSection .FloatImage {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  min-height: 60vh;
+  min-width: 350px;
+  opacity: 0.5;
+}
+
+.thirdSection .FloatImage img {
+  min-width: 100%;
+  min-height: 60vh;
+  object-position: center center;
+  object-fit: cover;
+  z-index: 10;
+}
+
+/* start item container  */
+.thirdSection .itemContainer {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 70% 30%;
+}
+/* left section -- image  */
+.thirdSection .itemContainer .leftContainer {
+  width: 100%;
+  height: 100%;
+
+  background-image: url("./assets/images/view-bioengineering-advance-with-robotic-hands.webp");
+  background-size: cover;
+  background-position: center center;
+  /* static color for visualization */
+  position: relative;
+  transition: 0.5s ease all;
+}
+
+.thirdSection .itemContainer .leftContainer .textContainer {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  bottom: 10vh;
+  left: 0;
+  right: 0;
+  width: 100%;
+  /* height: 20vh; */
+  padding: 0px 10%;
+}
+
+.thirdSection .itemContainer .leftContainer .textContainer p {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.thirdSection .itemContainer .leftContainer .textContainer p.last span {
+  display: inline-block;
+  width: 50px;
+  height: 1px;
+  background-color: #fff;
+}
+
+/* start right section -- list  */
+
+.thirdSection .itemContainer .rightContainer {
+  background-color: white;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  flex-direction: column;
+  gap: 50px;
+  padding: 0 20%;
+
+  height: 120vh;
+  margin-top: 20vh;
+}
+
+/* first text  */
+
+.thirdSection .itemContainer .rightContainer .textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.thirdSection .itemContainer .rightContainer .textContainer .title {
+  font-size: 30px;
+}
+.thirdSection .itemContainer .rightContainer .textContainer .subTitle {
+  font-size: 20px;
+}
+.thirdSection .itemContainer .rightContainer .textContainer .text {
+  font-size: 16px;
+}
+
+/* list style section */
+.thirdSection .itemContainer .rightContainer .listContainer > * {
+  transition: 0.5s ease all;
+}
+.thirdSection .itemContainer .rightContainer .listContainer {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  width: 100%;
+}
+.thirdSection .itemContainer .rightContainer .listContainer .divider {
+  width: 0;
+  height: 1px;
+  background-color: black;
+}
+
+.thirdSection .itemContainer .rightContainer .listContainer .text {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  width: 100%;
+  opacity: 0;
+  padding-left: 10px;
+}
+.thirdSection .itemContainer .rightContainer .listContainer .text:hover {
+  cursor: pointer;
+}
+.thirdSection .itemContainer .rightContainer .listContainer .text .dot {
+  opacity: 0;
+  transition: 0.5s ease all;
+}
+.thirdSection .itemContainer .rightContainer .listContainer .text.active .dot {
+  display: inline-block;
+  opacity: 1;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: orange;
+}
+
+/* start fourth section */
+
+.fourthSection {
+  position: relative !important;
+  overflow: hidden !important;
+  max-height: 400vh;
+  padding-bottom: 30vh;
+
+  background-color: var(--black);
+}
+.fourthSection .fixedInCenter {
+  position: absolute;
+  min-height: 300px;
+  min-width: 350px;
+  overflow: hidden;
+
+  left: 50%;
+  top: -300px;
+  transform: translateX(-50%);
+
+  z-index: 0;
+}
+
+.fourthSection .fixedInCenter img {
+  min-width: 100%;
+  min-height: 300px;
+  z-index: 0;
+
+  /* for now */
+  opacity: 0;
+}
+
+.fourthSection .fixedInCenter.fixedAction {
+  position: fixed;
+  top: 50% !important;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* gradient text  */
+
+.fourthSection .cardsContainer .Title {
+  font-size: 70px;
+  line-height: 100px;
+  /* liner gradient for text */
+  /* background-size: 200% auto; */
+  /* 
+  background: linear-gradient(
+    271deg,
+    #444 0%,
+    #444 5%,
+    #f44336 10%,
+    #f44336 50%,
+    #f44336 100%
+  ); */
+
+  /*  to let the letter take the gradient color*/
+  /* -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text; */
+
+  /* add the animation  */
+  /* animation: textAnimate 20s linear infinite; */
+
+  color: white;
+
+  width: max-content;
+  margin: 20% auto 0;
+  position: inherit;
+  padding: 10px 0;
+  z-index: 20;
+
+  opacity: 0;
+}
+
+@keyframes textAnimate {
+  0% {
+    background-size: 0%;
+  }
+  100% {
+    background-size: 400%;
+  }
+}
+
+.fourthSection .cardsContainer .subTitle {
+  color: var(--customfont);
+  width: 100%;
+  font-family: var(--neue);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30vh;
+}
+.fourthSection .cardsContainer .subTitle p {
+  font-size: 1rem;
+  text-align: center;
+  max-width: 45vw;
+}
+
+.fourthSection .cardsContainer .imageContainer {
+  width: 400px;
+  max-width: 400px;
+  max-height: 50vh;
+  overflow: hidden;
+  position: relative;
+  margin: 2% 0.5%;
+}
+.fourthSection .cardsContainer .imageContainer img {
+  /* min-width: 100%;
+  min-height: 600px; */
+
+  object-position: center center;
+  object-fit: cover;
+  transition: 0.5s ease all;
+  max-width: 100%;
+  height: 100%;
+}
+
+/* handle hover image effect  */
+.fourthSection .cardsContainer .scale {
+  position: relative;
+}
+.fourthSection .cardsContainer .scale img {
+  width: 100%;
+  object-fit: cover;
+  min-height: 100%;
+}
+.fourthSection .cardsContainer .scale::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  min-width: 200px;
+  min-height: 200px;
+  /* z-index: 100; */
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.009) 11.7%,
+    rgba(0, 0, 0, 0.034) 22.1%,
+    rgba(0, 0, 0, 0.072) 31.2%,
+    rgba(0, 0, 0, 0.123) 39.4%,
+    rgba(0, 0, 0, 0.182) 46.6%,
+    rgba(0, 0, 0, 0.249) 53.1%,
+    rgba(0, 0, 0, 0.32) 58.9%,
+    rgba(0, 0, 0, 0.394) 64.3%,
+    rgba(0, 0, 0, 0.468) 69.3%,
+    rgba(0, 0, 0, 0.54) 74.1%,
+    rgba(0, 0, 0, 0.607) 78.8%,
+    rgba(0, 0, 0, 0.668) 83.6%,
+    rgba(0, 0, 0, 0.721) 88.7%,
+    rgba(0, 0, 0, 0.762) 94.1%,
+    rgba(0, 0, 0, 0.79) 100%
+  );
+  transition: 0.5s ease-in-out all;
+
+  opacity: 0;
+}
+
+.fourthSection .cardsContainer .scale:hover div .dot {
+  opacity: 1;
+}
+.fourthSection .cardsContainer .scale:hover div {
+  top: 60%;
+}
+.fourthSection .cardsContainer .scale:hover::after {
+  opacity: 1;
+}
+
+.fourthSection .rowImageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin:0vh 1vw;
+  flex-wrap: wrap;
+}
+.rowImageContainer .imageContainer{
+  margin: 0!important;
+  min-width: 50%;
+}
+
+.fourthSection .cardsContainer .imageContainer div {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  display: flex;
+  gap: 10px;
+  min-width: 150px;
+  align-items: center;
+  transition: 0.5s ease all;
+
+  flex-direction: column;
+  justify-content: center;
+
+  background-image: linear-gradient(90deg, rgba(56, 55, 55, 0) 0%, rgba(0, 0, 0, 0.9) 70%, rgba(0, 0, 0, 0) 100%);
+  width: 100%;
+  padding: 50px 0;
+  border-radius: 20px;
+
+}
+.fourthSection .cardsContainer .imageContainer .mainText {
+  font-weight: bold;
+}
+
+.fourthSection .cardsContainer .imageContainer div .dot {
+  opacity: 0;
+
+  transition: 0.5s ease all;
+  width: 70%;
+  text-align: center;
+}
+/* end hover image effect */
+
+.fourthSection .cardsContainer .imageContainer.leftTop {
+  height: 50vh;
+}
+.fourthSection .cardsContainer .imageContainer.leftTop img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fourthSection .cardsContainer .imageContainer.rightTop img {
+  width: 100%;
+  object-fit: cover;
+}
+
+/* end images */
+.fourthSection .footerOfTheSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  bottom: 0%;
+}
+.fourthSection .footerOfTheSection .ContainerWrapper {
+  width: 40%;
+  text-align: start;
+  margin: auto;
+
+  opacity: 0;
+  transition: 0.5s ease all;
+
+  font-family: var(--neue);
+}
+.fourthSection .footerOfTheSection .ContainerWrapper .title {
+  font-size: 50px;
+  line-height: 5vw;
+  margin-bottom: 20px;
+  /* liner gradient for text */
+  background-size: 200% auto;
+  background: linear-gradient(
+    271deg,
+    #444 0%,
+    #444 5%,
+    #f44336 10%,
+    #f44336 50%,
+    #f44336 100%
+  );
+
+  /*  to let the letter take the gradient color*/
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* add the animation  */
+  animation: textAnimate 20s linear infinite;
+
+  position: inherit;
+  padding: 10px 0;
+  z-index: 20;
+}
+
+@keyframes textAnimate {
+  0% {
+    background-size: 0%;
+  }
+  100% {
+    background-size: 400%;
+  }
+}
+
+.fourthSection .footerOfTheSection .ContainerWrapper p {
+  cursor: pointer;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.5s ease all;
+  text-decoration: underline;
+}
+
+.fourthSection .footerOfTheSection .ContainerWrapper p:hover {
+  text-decoration: none;
+}
+
+.fourthSection .footerOfTheSection .ContainerWrapper p:hover .dot {
+  opacity: 1;
+}
+/* start fifthSection style */
+
+.fifthSection {
+  width: 100%;
+  position: relative;
+  height: 300vh;
+  height: 300svh;
+  overflow: hidden !important;
+  background-color: white;
+  /* background-color: white; */
+}
+.fifthSection video {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  margin: auto;
+  object-fit: cover;
+  object-position: center;
+
+  /* transform: translate(-50%, -50%); */
+
+  z-index: 0;
+
+  /* static property */
+  transition: 0.5s ease all;
+}
+
+/* 
+.fifthSection.fixedVideo video {
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  margin: auto;
+  object-fit: cover;
+  object-position: center;
+
+  position: fixed;
+  top: 0%;
+  left: 0%;
+
+  z-index: -1;
+
+  background-color: orange;
+} */
+/* mask image in the initial state */
+
+/* mask image after 100vh scrolling -- position above the video */
+
+/* separate to three section  */
+
+/* first 100vh just video */
+.fifthSection .Section100vh--pureVideo {
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  /* background-color: white; */
+
+  overflow: hidden !important;
+  position: relative;
+}
+
+.fifthSection .Section100vh--pureVideo::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 80vw;
+  min-height: 80vh;
+  background-image: url("./assets/images/video-mask2.png");
+  /* mix-blend-mode: multiply; */
+
+  background-position: center center;
+  filter: invert(1) brightness(1000%);
+  background-size: cover;
+  /* z-index: 20; */
+  /* background-color: red; */
+}
+/* second 100vh video with image as musk */
+
+.Section100vh--videoWithMask--plus {
+  position: relative;
+  height: 100vh !important;
+  min-height: 100vh !important;
+  max-height: 100vh !important;
+  display: flex;
+  align-items: center;
+
+  z-index: 20 !important;
+  overflow: hidden !important;
+  right: 0;
+  opacity: 1 !important;
+  left: 0 !important ;
+
+  flex-direction: column;
+  padding: 50px;
+}
+
+.fifthSection .itemContainer {
+  display: grid;
+  grid-template-columns: 60% 40%;
+
+  backdrop-filter: blur(1px);
+}
+.fifthSection .itemContainer .leftSection {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+
+.fifthSection .itemContainer .leftSection .title {
+  font-size: 70px;
+  line-height: 5vw;
+  /* liner gradient for text */
+  background-size: 200%;
+  /* background-image: linear-gradient(
+    271deg,
+    rgba(230, 182, 151, 1) 0%,
+    rgba(173, 120, 86, 1) 5%,
+    rgba(122, 74, 46, 1) 10%,
+    rgba(181, 127, 92, 1) 50%,
+    rgba(230, 182, 151, 1) 100%
+  ); */
+
+  background: linear-gradient(
+    271deg,
+    #444 0%,
+    #444 5%,
+    #f44336 10%,
+    #f44336 50%,
+    #f44336 100%
+  );
+  /*  to let the letter take the gradient color*/
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* add the animation  */
+  animation: textAnimate 20s linear infinite;
+
+  position: inherit;
+  padding: 10px 0;
+  z-index: 20;
+}
+
+@keyframes textAnimate {
+  0% {
+    background-size: 0%;
+  }
+  100% {
+    background-size: 400%;
+  }
+}
+
+.fifthSection .itemContainer .rightContainer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  flex-direction: column;
+  gap: 50px;
+  padding: 0 20%;
+}
+
+/* first text  */
+
+.fifthSection .itemContainer .rightContainer .textContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.fifthSection .itemContainer .rightContainer .textContainer .title {
+  font-size: 30px;
+}
+.fifthSection .itemContainer .rightContainer .textContainer .subTitle {
+  font-size: 20px;
+}
+.fifthSection .itemContainer .rightContainer .textContainer .text {
+  font-size: 16px;
+}
+
+/* list style section */
+.fifthSection .itemContainer .rightContainer .listContainer {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  width: 100%;
+}
+.fifthSection .itemContainer .rightContainer .listContainer .divider {
+  width: 0;
+  height: 1px;
+  background-color: black;
+}
+
+.fifthSection .itemContainer .rightContainer .listContainer .text {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  width: 100%;
+  opacity: 0;
+  padding-left: 10px;
+}
+
+/* last section  */
+
+/* gradient text  */
+
+.lastSection .container .contactLink {
+  margin-top: 20px;
+
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 24px;
+
+  transition: 0.5s ease all;
+  position: relative;
+}
+.lastSection .container .contactLink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  bottom: 0;
+  height: 2px;
+  background-color: black;
+  transition: 0.5s ease all;
+}
+.lastSection .container .contactLink::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 60%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  background-color: orange;
+  border-radius: 50%;
+  opacity: 0;
+
+  transition: 0.5s ease all;
+}
+
+.lastSection .container .contactLink:hover {
+  padding-left: 20px;
+}
+.lastSection .container .contactLink:hover::after {
+  left: auto;
+  width: 0;
+}
+.lastSection .container .contactLink:hover::before {
+  opacity: 1;
+}
